@@ -1,5 +1,7 @@
 <?php
 
+//aplikasi bookstore
+
 defined('BASEPATH') or exit('No Direct Script Access Allowed');
 
 class Control_data extends CI_Controller{
@@ -60,4 +62,3 @@ class Control_data extends CI_Controller{
 
 
 }
-?>
