@@ -1,1 +1,2 @@
 Adam Firdaus
+Fairuz Amzar
