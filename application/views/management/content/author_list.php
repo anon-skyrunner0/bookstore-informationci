@@ -67,7 +67,7 @@
               <p>Author Management ⮟</p>
             </a>
           </li>
-            <div class="collapse" id="author" style="margin-left: 10px;">
+            <div class="collapse show" id="author" style="margin-left: 10px;">
                 <li class="active">
                     <a href="<?= base_url('admin/author_management')?>">
                     <i class="now-ui-icons users_circle-08"></i>
