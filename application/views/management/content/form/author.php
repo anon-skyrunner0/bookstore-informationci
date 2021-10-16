@@ -254,7 +254,7 @@
                         <small class="form-text text-muted">sesuaikan inputan dengan contoh pada kolom</small>
                     </div>
                     <?php
-                        $content=file_get_contents("https://restcountries.eu/rest/v2/all");
+                        $content=file_get_contents("https://restcountries.com/v3.1/all");
                         $content=utf8_encode($content);
 
                         $result=json_decode($content,true);
@@ -263,10 +263,10 @@
                         <label for="id">Negara Asal</label>
                         <select name="negara" id="" class="form-control">
                             <?php foreach( $result as $val) :?>
-                            <option value="<?= $val['name'];?>"><?= $val['name'];?></option>
+                            <option value="<?= $val['name']['common'];?>"><?= $val['name']['common'];?></option>
                             <?php endforeach;?>
                         </select>
-                        <small class="form-text text-muted">this data supported by <a href="https://restcountries.eu/rest/v2/all">RestCountries API</a></small>
+                        <small class="form-text text-muted">this data supported by <a href="https://restcountries.com/v3.1/all">RestCountries API</a></small>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
