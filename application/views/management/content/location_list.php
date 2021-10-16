@@ -127,7 +127,7 @@
               <p>Location Management ⮟</p>
             </a>
           </li>
-            <div class="collapse" id="location" style="margin-left: 10px;">
+            <div class="collapse show" id="location" style="margin-left: 10px;">
                 <li class="active">
                     <a href="<?= base_url('admin/location_management');?>">
                     <i class="now-ui-icons users_circle-08"></i>

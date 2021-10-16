@@ -47,7 +47,7 @@
               <p>Book Management ⮟</p>
             </a>
           </li>
-            <div class="collapse" id="book" style="margin-left: 10px;">
+            <div class="collapse show" id="book" style="margin-left: 10px;">
                 <li>
                     <a href="<?= base_url('admin/book_management')?>">
                     <i class="now-ui-icons files_single-copy-04"></i>

@@ -87,14 +87,14 @@
               <p>Publisher Management ⮟</p>
             </a>
           </li>
-            <div class="collapse" id="publisher" style="margin-left: 10px;">
+            <div class="collapse show" id="publisher" style="margin-left: 10px;">
                 <li>
                     <a href="<?= base_url('admin/publisher_management');?>">
                     <i class="now-ui-icons users_circle-08"></i>
                     <p>Daftar Penerbit</p>
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="<?= base_url('admin/add_publisher');?>">
                     <i class="now-ui-icons ui-1_simple-add"></i>
                     <p>Tambah Penerbit</p>

@@ -107,7 +107,7 @@
               <p>Category Management ⮟</p>
             </a>
           </li>
-            <div class="collapse" id="category" style="margin-left: 10px;">
+            <div class="collapse show" id="category" style="margin-left: 10px;">
                 <li>
                     <a href="<?= base_url('admin/category_management')?>">
                     <i class="now-ui-icons users_circle-08"></i>
