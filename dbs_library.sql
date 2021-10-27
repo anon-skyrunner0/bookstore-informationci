@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 22 Jun 2020 pada 12.49
--- Versi server: 10.4.11-MariaDB
--- Versi PHP: 7.4.4
+-- Host: localhost
+-- Generation Time: Oct 27, 2021 at 04:38 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_admin`
+-- Table structure for table `tbl_admin`
 --
 
 CREATE TABLE `tbl_admin` (
@@ -37,16 +37,17 @@ CREATE TABLE `tbl_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_admin`
+-- Dumping data for table `tbl_admin`
 --
 
 INSERT INTO `tbl_admin` (`admin_id`, `admin_name`, `email`, `password`, `role`, `img_admin`) VALUES
-(319, 'Adam Firdaus', 'nissa@gmail.com', 'b4616dd8f249f7d6011b97195979ab6b', '', 'photo-200620-7ee7fa932c.jpg');
+(319, 'Adam Firdaus', 'nissa@gmail.com', 'b4616dd8f249f7d6011b97195979ab6b', '', 'photo-200620-7ee7fa932c.jpg'),
+(320, 'Admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '', 'photo-200620-7ee7fa932c.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_author`
+-- Table structure for table `tbl_author`
 --
 
 CREATE TABLE `tbl_author` (
@@ -58,11 +59,12 @@ CREATE TABLE `tbl_author` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_author`
+-- Dumping data for table `tbl_author`
 --
 
 INSERT INTO `tbl_author` (`author_id`, `author_name`, `years_active`, `country`, `email`) VALUES
 (2934, 'Anissa Firdaus', '2017 - Presents', 'Indonesia', 'adamfrds@gmail.com'),
+(5699, 'dwa', '2012', 'El Salvador', 'dwa@fwa.fea'),
 (15022, 'Adam Firdaus', '2016 - Sekarang', 'Korea (Republic of)', 'adamfrdsid@gmail.com'),
 (22015, 'Anissa Nabila', '2015 - Presents', 'Indonesia', 'anssanbla16@gmail.com'),
 (42064, 'Sheila Ondricka', '2005 - Presents', 'Lebanon', 'jstiedemann@gmail.com'),
@@ -83,7 +85,7 @@ INSERT INTO `tbl_author` (`author_id`, `author_name`, `years_active`, `country`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_book_detail`
+-- Table structure for table `tbl_book_detail`
 --
 
 CREATE TABLE `tbl_book_detail` (
@@ -98,7 +100,7 @@ CREATE TABLE `tbl_book_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_book_detail`
+-- Dumping data for table `tbl_book_detail`
 --
 
 INSERT INTO `tbl_book_detail` (`book_id`, `book_title`, `author_id`, `category_id`, `publisher_id`, `location_id`, `price`, `stock_unit`) VALUES
@@ -110,7 +112,7 @@ INSERT INTO `tbl_book_detail` (`book_id`, `book_title`, `author_id`, `category_i
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_category`
+-- Table structure for table `tbl_category`
 --
 
 CREATE TABLE `tbl_category` (
@@ -119,7 +121,7 @@ CREATE TABLE `tbl_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_category`
+-- Dumping data for table `tbl_category`
 --
 
 INSERT INTO `tbl_category` (`category_id`, `category_name`) VALUES
@@ -142,7 +144,273 @@ INSERT INTO `tbl_category` (`category_id`, `category_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_location`
+-- Table structure for table `tbl_countries`
+--
+
+CREATE TABLE `tbl_countries` (
+  `name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_countries`
+--
+
+INSERT INTO `tbl_countries` (`name`) VALUES
+('Afghanistan'),
+('Åland Islands'),
+('Albania'),
+('Algeria'),
+('American Samoa'),
+('Andorra'),
+('Angola'),
+('Anguilla'),
+('Antarctica'),
+('Antigua and Barbuda'),
+('Argentina'),
+('Armenia'),
+('Aruba'),
+('Australia'),
+('Austria'),
+('Azerbaijan'),
+('Bahamas'),
+('Bahrain'),
+('Bangladesh'),
+('Barbados'),
+('Belarus'),
+('Belgium'),
+('Belize'),
+('Benin'),
+('Bermuda'),
+('Bhutan'),
+('Bolivia'),
+('Bosnia and Herzegovina'),
+('Botswana'),
+('Bouvet Island'),
+('Brazil'),
+('British Indian Ocean Territory'),
+('British Virgin Islands'),
+('Brunei'),
+('Bulgaria'),
+('Burkina Faso'),
+('Burundi'),
+('Cambodia'),
+('Cameroon'),
+('Canada'),
+('Cape Verde'),
+('Caribbean Netherlands'),
+('Cayman Islands'),
+('Central African Republic'),
+('Chad'),
+('Chile'),
+('China'),
+('Christmas Island'),
+('Cocos (Keeling) Islands'),
+('Colombia'),
+('Comoros'),
+('Cook Islands'),
+('Costa Rica'),
+('Croatia'),
+('Cuba'),
+('Curaçao'),
+('Cyprus'),
+('Czechia'),
+('Denmark'),
+('Djibouti'),
+('Dominica'),
+('Dominican Republic'),
+('DR Congo'),
+('Ecuador'),
+('Egypt'),
+('El Salvador'),
+('Equatorial Guinea'),
+('Eritrea'),
+('Estonia'),
+('Eswatini'),
+('Ethiopia'),
+('Falkland Islands'),
+('Faroe Islands'),
+('Fiji'),
+('Finland'),
+('France'),
+('French Guiana'),
+('French Polynesia'),
+('French Southern and Antarctic Lands'),
+('Gabon'),
+('Gambia'),
+('Georgia'),
+('Germany'),
+('Ghana'),
+('Gibraltar'),
+('Greece'),
+('Greenland'),
+('Grenada'),
+('Guadeloupe'),
+('Guam'),
+('Guatemala'),
+('Guernsey'),
+('Guinea'),
+('Guinea-Bissau'),
+('Guyana'),
+('Haiti'),
+('Heard Island and McDonald Islands'),
+('Honduras'),
+('Hong Kong'),
+('Hungary'),
+('Iceland'),
+('India'),
+('Indonesia'),
+('Iran'),
+('Iraq'),
+('Ireland'),
+('Isle of Man'),
+('Israel'),
+('Italy'),
+('Ivory Coast'),
+('Jamaica'),
+('Japan'),
+('Jersey'),
+('Jordan'),
+('Kazakhstan'),
+('Kenya'),
+('Kiribati'),
+('Kosovo'),
+('Kuwait'),
+('Kyrgyzstan'),
+('Laos'),
+('Latvia'),
+('Lebanon'),
+('Lesotho'),
+('Liberia'),
+('Libya'),
+('Liechtenstein'),
+('Lithuania'),
+('Luxembourg'),
+('Macau'),
+('Madagascar'),
+('Malawi'),
+('Malaysia'),
+('Maldives'),
+('Mali'),
+('Malta'),
+('Marshall Islands'),
+('Martinique'),
+('Mauritania'),
+('Mauritius'),
+('Mayotte'),
+('Mexico'),
+('Micronesia'),
+('Moldova'),
+('Monaco'),
+('Mongolia'),
+('Montenegro'),
+('Montserrat'),
+('Morocco'),
+('Mozambique'),
+('Myanmar'),
+('Namibia'),
+('Nauru'),
+('Nepal'),
+('Netherlands'),
+('New Caledonia'),
+('New Zealand'),
+('Nicaragua'),
+('Niger'),
+('Nigeria'),
+('Niue'),
+('Norfolk Island'),
+('North Korea'),
+('North Macedonia'),
+('Northern Mariana Islands'),
+('Norway'),
+('Oman'),
+('Pakistan'),
+('Palau'),
+('Palestine'),
+('Panama'),
+('Papua New Guinea'),
+('Paraguay'),
+('Peru'),
+('Philippines'),
+('Pitcairn Islands'),
+('Poland'),
+('Portugal'),
+('Puerto Rico'),
+('Qatar'),
+('Republic of the Congo'),
+('Réunion'),
+('Romania'),
+('Russia'),
+('Rwanda'),
+('Saint Barthélemy'),
+('Saint Helena, Ascension and Tristan da Cunha'),
+('Saint Kitts and Nevis'),
+('Saint Lucia'),
+('Saint Martin'),
+('Saint Pierre and Miquelon'),
+('Saint Vincent and the Grenadines'),
+('Samoa'),
+('San Marino'),
+('São Tomé and Príncipe'),
+('Saudi Arabia'),
+('Senegal'),
+('Serbia'),
+('Seychelles'),
+('Sierra Leone'),
+('Singapore'),
+('Sint Maarten'),
+('Slovakia'),
+('Slovenia'),
+('Solomon Islands'),
+('Somalia'),
+('South Africa'),
+('South Georgia'),
+('South Korea'),
+('South Sudan'),
+('Spain'),
+('Sri Lanka'),
+('Sudan'),
+('Suriname'),
+('Svalbard and Jan Mayen'),
+('Sweden'),
+('Switzerland'),
+('Syria'),
+('Taiwan'),
+('Tajikistan'),
+('Tanzania'),
+('Thailand'),
+('Timor-Leste'),
+('Togo'),
+('Tokelau'),
+('Tonga'),
+('Trinidad and Tobago'),
+('Tunisia'),
+('Turkey'),
+('Turkmenistan'),
+('Turks and Caicos Islands'),
+('Tuvalu'),
+('Uganda'),
+('Ukraine'),
+('United Arab Emirates'),
+('United Kingdom'),
+('United States'),
+('United States Minor Outlying Islands'),
+('United States Virgin Islands'),
+('Uruguay'),
+('Uzbekistan'),
+('Vanuatu'),
+('Vatican City'),
+('Venezuela'),
+('Vietnam'),
+('Wallis and Futuna'),
+('Western Sahara'),
+('Yemen'),
+('Zambia'),
+('Zimbabwe');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_location`
 --
 
 CREATE TABLE `tbl_location` (
@@ -151,7 +419,7 @@ CREATE TABLE `tbl_location` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_location`
+-- Dumping data for table `tbl_location`
 --
 
 INSERT INTO `tbl_location` (`location_id`, `location`) VALUES
@@ -161,7 +429,7 @@ INSERT INTO `tbl_location` (`location_id`, `location`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_publisher`
+-- Table structure for table `tbl_publisher`
 --
 
 CREATE TABLE `tbl_publisher` (
@@ -172,7 +440,7 @@ CREATE TABLE `tbl_publisher` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_publisher`
+-- Dumping data for table `tbl_publisher`
 --
 
 INSERT INTO `tbl_publisher` (`publisher_id`, `publisher_name`, `address`, `email`) VALUES
@@ -199,7 +467,7 @@ INSERT INTO `tbl_publisher` (`publisher_id`, `publisher_name`, `address`, `email
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_user`
+-- Table structure for table `tbl_user`
 --
 
 CREATE TABLE `tbl_user` (
@@ -212,7 +480,7 @@ CREATE TABLE `tbl_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_user`
+-- Dumping data for table `tbl_user`
 --
 
 INSERT INTO `tbl_user` (`user_id`, `fullname`, `alamat`, `no_hp`, `email`, `password`) VALUES
@@ -223,19 +491,19 @@ INSERT INTO `tbl_user` (`user_id`, `fullname`, `alamat`, `no_hp`, `email`, `pass
 --
 
 --
--- Indeks untuk tabel `tbl_admin`
+-- Indexes for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indeks untuk tabel `tbl_author`
+-- Indexes for table `tbl_author`
 --
 ALTER TABLE `tbl_author`
   ADD PRIMARY KEY (`author_id`);
 
 --
--- Indeks untuk tabel `tbl_book_detail`
+-- Indexes for table `tbl_book_detail`
 --
 ALTER TABLE `tbl_book_detail`
   ADD PRIMARY KEY (`book_id`),
@@ -245,35 +513,41 @@ ALTER TABLE `tbl_book_detail`
   ADD KEY `publisher_id` (`publisher_id`);
 
 --
--- Indeks untuk tabel `tbl_category`
+-- Indexes for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Indeks untuk tabel `tbl_location`
+-- Indexes for table `tbl_countries`
+--
+ALTER TABLE `tbl_countries`
+  ADD PRIMARY KEY (`name`);
+
+--
+-- Indexes for table `tbl_location`
 --
 ALTER TABLE `tbl_location`
   ADD PRIMARY KEY (`location_id`);
 
 --
--- Indeks untuk tabel `tbl_publisher`
+-- Indexes for table `tbl_publisher`
 --
 ALTER TABLE `tbl_publisher`
   ADD PRIMARY KEY (`publisher_id`);
 
 --
--- Indeks untuk tabel `tbl_user`
+-- Indexes for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `tbl_book_detail`
+-- Constraints for table `tbl_book_detail`
 --
 ALTER TABLE `tbl_book_detail`
   ADD CONSTRAINT `tbl_book_detail_ibfk_1` FOREIGN KEY (`location_id`) REFERENCES `tbl_location` (`location_id`) ON DELETE SET NULL ON UPDATE CASCADE,

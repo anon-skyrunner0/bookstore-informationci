@@ -19,6 +19,14 @@ class Admin extends MY_Controller{
         $this->load->view('management/dashboard',$data);
     }
 
+    public function update_countries(){
+        $content=file_get_contents("https://restcountries.com/v3.1/all");
+        $result=json_decode($content,true);
+        foreach( $result as $val){
+            $this->db->query("INSERT INTO tbl_countries VALUES('".$val['name']['common']."')");
+        }
+    }
+
     public function book_management(){
         $data['bookdetail'] = $this->Admin_model->getBook();
         $data['title'] = "Nissa-Bookstore Admin | Book Management";
