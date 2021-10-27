@@ -82,6 +82,7 @@ class Admin extends MY_Controller{
     }
 
     public function add_author(){
+        $data['countries'] = $this->db->get('tbl_countries')->result();
         $data['title'] = "Nissa-Bookstore Admin | Tambah Penulis";
         $this->load->view('management/content/form/author',$data); 
     }
@@ -123,6 +124,7 @@ class Admin extends MY_Controller{
 
     public function edit_author($author_id)
     {
+        $data['countries'] = $this->db->get('tbl_countries')->result();
         $data['author'] = $this->Admin_model->getAuthorById($author_id);
         $data['title'] = "Nissa Bookstore Admin | Edit Author";
         $this->load->view('management/content/form/edit_author',$data);
