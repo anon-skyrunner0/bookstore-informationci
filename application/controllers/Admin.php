@@ -19,6 +19,14 @@ class Admin extends MY_Controller{
         $this->load->view('management/dashboard',$data);
     }
 
+    public function update_countries(){
+        $content=file_get_contents("https://restcountries.com/v3.1/all");
+        $result=json_decode($content,true);
+        foreach( $result as $val){
+            $this->db->query("INSERT INTO tbl_countries VALUES('".$val['name']['common']."')");
+        }
+    }
+
     public function book_management(){
         $data['bookdetail'] = $this->Admin_model->getBook();
         $data['title'] = "Nissa-Bookstore Admin | Book Management";
@@ -74,6 +82,7 @@ class Admin extends MY_Controller{
     }
 
     public function add_author(){
+        $data['countries'] = $this->db->get('tbl_countries')->result();
         $data['title'] = "Nissa-Bookstore Admin | Tambah Penulis";
         $this->load->view('management/content/form/author',$data); 
     }
@@ -115,6 +124,7 @@ class Admin extends MY_Controller{
 
     public function edit_author($author_id)
     {
+        $data['countries'] = $this->db->get('tbl_countries')->result();
         $data['author'] = $this->Admin_model->getAuthorById($author_id);
         $data['title'] = "Nissa Bookstore Admin | Edit Author";
         $this->load->view('management/content/form/edit_author',$data);
